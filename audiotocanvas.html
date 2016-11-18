@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<canvas id="c"></canvas>
+	<audio src=""></audio>
+<script>
+	var audio = document.querySelector('audio');
+	var constraints = { audio: true, video: false }; 
+    navigator.mediaDevices.getUserMedia(constraints);
+    var streamRecorder;
+    function gotAudio(stream) {
+        var microphone = context.createMediaStreamSource(stream);
+        var analyser = context.createAnalyser();
+        microphone.connect(analyser);
+        analyser.connect(context.destination);
+        requestAnimationFrame(drawAnimation);
+        
+        streamRecorder = stream.record();
+        peerConnection.addStream(stream);
+        audio.srcObject = stream;
+        audio.onloadedmetadata = function(e) {
+    	audio.play();
+  };
+    }
+</script>
+</body>
+</html>

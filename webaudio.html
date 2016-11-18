@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+<!--   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Rock+Salt|Trirong|Poiret+One|Share+Tech+Mono|VT323" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://use.fontawesome.com/a0becfad23.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+  <!-- <audio id="audio" src="assets/audio/attack.mp3"></audio> -->
+</head>
+
+<body>
+
+<img src="image2audio/me.jpg">
+<canvas id="myCanvas" width="400" height="400"></canvas><br>
+
+<div id="blah" style="display: block;">
+mode: 
+<input onchange="check(this.value)" type="radio" name="mode" value="0" checked="checked">Linear
+<input onchange="check(this.value)" type="radio" name="mode" value="1">Logarithmic<br>
+<div id="log_box" style="display:none">
+Set Min Freq = <input value="200" onchange="min_v=Math.log(this.value)">Hz<br>
+Set Max Freq = <input value="16000" onchange="max_v=Math.log(this.value)">Hz<br>
+</div>
+maximize output (set peak to 0dB): 
+<input onclick="maximizer=0" type="radio" name="max" checked="checked">No
+<input onclick="maximizer=1" type="radio" name="max">Yes<br><br>
+<button onclick="generate();">generate this (may take a while.....)</button>
+<br>
+<button onclick="on_click();">try your own one</button> (!max handle image height = 512px in Linear mode)
+<input type="file" id="files" multiple="" accept="image/*" style="display:none">
+<br><br>
+Note: click "Continue" if "Unresponsive script" window pops up...
+<br><br>
+<button onclick="generateWave();" id="o_button" style="display:none">now click me</button>
+<br>
+<div id="output"></div>
+<br><br>
+</div>
+
+
+
+
+<video></video>
+<audio></audio>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="assets/javascript/bootstrap.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<!-- <script src="assets/javascript/webaudiox.shim.js"></script>
+<script src="assets/javascript/webaudiox.lineout.js"></script>
+<script src="assets/javascript/webaudiox.loadbuffer.js"></script>
+<script src="assets/javascript/webaudiox.analyseraverage.js"></script>
+<script src="assets/javascript/webaudiox.bytetonormalizedfloat32array.js"></script>
+<script src="assets/javascript/webaudiox.analyser2volume.js"></script>
+<script src="assets/javascript/webaudiox.analyser2canvas.js"></script> -->
+
+
+<script src="image2audio/image_to_audio.js"></script>
+
+
+<script src="http://127.0.0.1:8080/assets/javascript/buffer_loader.js"></script>
+<script src="assets/javascript/webaudio.js"></script>
+</html>
